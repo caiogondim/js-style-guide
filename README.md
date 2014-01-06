@@ -10,6 +10,7 @@ My remix of everybody's JavaScript Style Guide with some Python inspiration.
 > There should be one - and preferably only one - obvious way to do it.
 > - Zen of Python
 
+
 ## Strings
 
 - Use only double quotes. Although single quotes is less noisy, double quote is
@@ -55,6 +56,40 @@ var errorMessage = 'This is a super long error that ' +
   'with this, you would get nowhere ' +
   'fast.';
 ```
+
+
+## Semicolons
+
+There are a lot of
+[FUD](http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) about the
+omission of semicolons in JavaScript. It's perfect safe to ommit them and it
+removes unnecessary symbols from the code, making it looks cleaner.
+
+Use a `;` only before a leading `(`, `[`, `-`, `+` or `!` at the start of the
+line. This prevents the expression from being interpreted as a function call or
+property access, respectively.
+
+```javascript
+// bad
+var foo = 'bar';
+
+// good
+var foo = 'bar'
+
+// bad
+(x || y).doSomething()
+
+// good
+;(x || y).doSomething()
+
+// bad
+[a, b, c].forEach(doSomething)
+
+// good
+;[a, b, c].forEach(doSomething)
+```
+And since you minify your production code (right?), in the end it doesn't
+matter.
 
 ## Reference
 

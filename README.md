@@ -96,6 +96,31 @@ var foo = 'bar'
 And since you minify your production code (right?), in the end it doesn't
 matter.
 
+
+## Naming
+
+### Avoid double negatives
+
+```javascript
+// bad
+foo.disabled = false
+
+// good
+foo.enabled = true
+
+// bad
+bar.setHidden(false)
+
+// good
+bar.setVisible(true)
+
+// bad
+kung.invisible = false
+
+// good
+kung.visible = true
+```
+
 ## Reference
 
 - [NPM Coding Style](https://npmjs.org/doc/coding-style.html)

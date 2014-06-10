@@ -121,6 +121,28 @@ kung.invisible = false
 kung.visible = true
 ```
 
+### Verbal actions
+
+```javascript
+// bad
+status.message("Lorem ipsum")
+
+// good
+status.showMessage("Lorem ipsum")
+
+// bad
+page.forward()
+
+// good
+page.goForward()
+
+// bad
+page.backward()
+
+// good
+page.goBackwards()
+```
+
 ## Reference
 
 - [NPM Coding Style](https://npmjs.org/doc/coding-style.html)

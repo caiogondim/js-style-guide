@@ -143,6 +143,24 @@ page.backward()
 page.goBackwards()
 ```
 
+### Mutable versus immutable methods
+
+A pattern used on the Qt framework is to use forms of a verb to indicate wheter
+the method will change or not the original object. Use **present** for methods
+that change the object. Use **past participle** for methods that returns a
+transformed value without mutating the original object.
+
+```javascript
+// Immutable method
+var str = " Lorem ";
+str.trimmed();
+console.log(str); // => " Lorem "
+
+// Mutable method
+str.trim();
+console.log(str); // => "Lorem"
+```
+
 ### Conventions
 
 Some very popular conventions used in programming and in JavaScript.
@@ -227,3 +245,4 @@ for (var i = 0; i < 10; i++) {
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Effective Go](http://golang.org/doc/effective_go.html)
 - [Idiomatic.js](https://github.com/rwaldron/idiomatic.js/)
+- [Ariya Hidayat's blog](http://ariya.ofilabs.com/2014/02/javascript-array-slice-vs-splice.html)

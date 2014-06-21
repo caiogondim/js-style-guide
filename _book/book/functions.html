@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Conventions | JavaScript Style Guide</title>
+        <title>Functions | JavaScript Style Guide</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.3">
@@ -19,10 +19,10 @@
     <meta name="author" content="caiogondim">
     
     
-    <link rel="next" href="../book/events.html" />
+    <link rel="next" href="../book/classes-and-modules.html" />
     
     
-    <link rel="prev" href="../book/naming.html" />
+    <link rel="prev" href="../book/objects.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="caiogondim/js-style-guide" data-level="13" data-basepath=".." data-revision="1403379978176">
+    <div class="book" data-github="caiogondim/js-style-guide" data-level="4" data-basepath=".." data-revision="1403379978176">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/caiogondim/js-style-guide/edit/master/book/conventions.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/caiogondim/js-style-guide/edit/master/book/functions.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -339,7 +339,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 81.25%;min-width: 75%;"></div>
+        <div class="inner" style="width: 25%;min-width: 18.75%;"></div>
     </div>
     <div class="chapters">
     
@@ -353,23 +353,23 @@
     
         <a href="../book/functions.html" title="Functions" class="chapter done new-chapter" data-progress="4" style="left: 25%;"></a>
     
-        <a href="../book/classes-and-modules.html" title="Classes and Modules" class="chapter done new-chapter" data-progress="5" style="left: 31.25%;"></a>
+        <a href="../book/classes-and-modules.html" title="Classes and Modules" class="chapter  new-chapter" data-progress="5" style="left: 31.25%;"></a>
     
-        <a href="../book/comments.html" title="Comments" class="chapter done new-chapter" data-progress="6" style="left: 37.5%;"></a>
+        <a href="../book/comments.html" title="Comments" class="chapter  new-chapter" data-progress="6" style="left: 37.5%;"></a>
     
-        <a href="../book/variables.html" title="Variables" class="chapter done new-chapter" data-progress="7" style="left: 43.75%;"></a>
+        <a href="../book/variables.html" title="Variables" class="chapter  new-chapter" data-progress="7" style="left: 43.75%;"></a>
     
-        <a href="../book/tabs-vs-space.html" title="Tabs vs Spaces" class="chapter done new-chapter" data-progress="8" style="left: 50%;"></a>
+        <a href="../book/tabs-vs-space.html" title="Tabs vs Spaces" class="chapter  new-chapter" data-progress="8" style="left: 50%;"></a>
     
-        <a href="../book/whitespace.html" title="Whitespace" class="chapter done new-chapter" data-progress="9" style="left: 56.25%;"></a>
+        <a href="../book/whitespace.html" title="Whitespace" class="chapter  new-chapter" data-progress="9" style="left: 56.25%;"></a>
     
-        <a href="../book/strings.html" title="Strings" class="chapter done " data-progress="10" style="left: 62.5%;"></a>
+        <a href="../book/strings.html" title="Strings" class="chapter  " data-progress="10" style="left: 62.5%;"></a>
     
-        <a href="../book/semicolons.html" title="Semicolons" class="chapter done " data-progress="11" style="left: 68.75%;"></a>
+        <a href="../book/semicolons.html" title="Semicolons" class="chapter  " data-progress="11" style="left: 68.75%;"></a>
     
-        <a href="../book/naming.html" title="Naming" class="chapter done " data-progress="12" style="left: 75%;"></a>
+        <a href="../book/naming.html" title="Naming" class="chapter  " data-progress="12" style="left: 75%;"></a>
     
-        <a href="../book/conventions.html" title="Conventions" class="chapter done " data-progress="13" style="left: 81.25%;"></a>
+        <a href="../book/conventions.html" title="Conventions" class="chapter  " data-progress="13" style="left: 81.25%;"></a>
     
         <a href="../book/events.html" title="Events" class="chapter  " data-progress="14" style="left: 87.5%;"></a>
     
@@ -382,67 +382,10 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_270">
+                    <section class="normal" id="section-gitbook_273">
                     
-                        <h1 id="conventions">Conventions</h1>
-<p>Some very popular conventions used in programming and in JavaScript.</p>
-<h2 id="-err-for-error"><code>err</code> for error</h2>
-<p>Specially common in Nodejs land. Avoid to use <code>e</code> for an error variable. It not
-meaningfull and lots of people also uses <code>e</code> for events and elements.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// bad</span>
-http.get(<span class="hljs-string">"http://www.google.com/index.html"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(res)</span> {</span>
-  console.log(<span class="hljs-string">"Got response: "</span> + res.statusCode);
-}).on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-  console.log(<span class="hljs-string">"Got error: "</span> + e.message);
-});
-
-<span class="hljs-comment">// good</span>
-http.get(<span class="hljs-string">"http://www.google.com/index.html"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(res)</span> {</span>
-  console.log(<span class="hljs-string">"Got response: "</span> + res.statusCode);
-}).on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err)</span> {</span>
-  console.log(<span class="hljs-string">"Got error: "</span> + err.message);
-});
-</code></pre>
-<h2 id="-ev-for-event"><code>ev</code> for event</h2>
-<p>Just like <code>err</code>, avoid to use <code>e</code> for events.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// bad</span>
-$(<span class="hljs-string">"body"</span>).on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-  console.log(<span class="hljs-string">"&lt;body&gt; was clicked"</span>);
-});
-
-<span class="hljs-comment">// good</span>
-$(<span class="hljs-string">"body"</span>).on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ev)</span> {</span>
-  console.log(<span class="hljs-string">"&lt;body&gt; was clicked"</span>);
-});
-</code></pre>
-<h2 id="-el-for-element"><code>el</code> for element</h2>
-<p>As with events and errors, avoid to use <code>e</code> for variables that holds references
-for DOM elements.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// bad</span>
-<span class="hljs-keyword">var</span> e = $(<span class="hljs-string">"body"</span>);
-
-<span class="hljs-comment">// good</span>
-<span class="hljs-keyword">var</span> el = $(<span class="hljs-string">" body"</span>);
-</code></pre>
-<h2 id="loops">Loops</h2>
-<p>If you need to use <code>for</code> or <code>while</code> loops, start the counter with the letter
-<code>i</code>. For nested loops, use the letters <code>j</code>, <code>k</code> and <code>l</code>. If you need more than
-4 nested loops, something is probably wrong with your code.</p>
-<p>This is an idiom very used throught out almost every programming language.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// bad</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> count1 = <span class="hljs-number">0</span>; count1 &lt; <span class="hljs-number">10</span>; count1++) {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> count2 = <span class="hljs-number">0</span>; count2 &lt; <span class="hljs-number">20</span>; count2++) {
-    <span class="hljs-comment">// le code</span>
-  }
-}
-
-<span class="hljs-comment">// good</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10</span>; j++) {
-    <span class="hljs-comment">// le code</span>
-  }
-}
-</code></pre>
+                        <h1 id="functions">Functions</h1>
+<h2 id="return-early">Return early</h2>
 
                     
                     </section>
@@ -452,10 +395,10 @@ for DOM elements.</p>
         </div>
 
         
-        <a href="../book/naming.html" class="navigation navigation-prev " aria-label="Previous page: Naming"><i class="fa fa-angle-left"></i></a>
+        <a href="../book/objects.html" class="navigation navigation-prev " aria-label="Previous page: Objects"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../book/events.html" class="navigation navigation-next " aria-label="Next page: Events"><i class="fa fa-angle-right"></i></a>
+        <a href="../book/classes-and-modules.html" class="navigation navigation-next " aria-label="Next page: Classes and Modules"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

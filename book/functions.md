@@ -1,0 +1,3 @@
+# Functions
+
+## Return early

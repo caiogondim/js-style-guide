@@ -1,0 +1,28 @@
+{
+  "name": "js-style-guide",
+  "version": "0.0.0",
+  "description": "<img   src=\"https://raw.github.com/caiogondim/js-style-guide/master/logo.png\"   alt=\"JS Style Guide logo\" align=\"right\" width=\"200px\" />",
+  "main": "README.md",
+  "dependencies": {
+    "gitbook": "^0.5.6"
+  },
+  "devDependencies": {
+    "gitbook": "^0.5.6"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caiogondim/js-style-guide.git"
+  },
+  "author": "Caio Gondim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caiogondim/js-style-guide/issues"
+  },
+  "homepage": "https://github.com/caiogondim/js-style-guide",
+  "scripts": {
+    "serve": "./node_modules/gitbook/bin/gitbook.js serve"
+  }
+}
